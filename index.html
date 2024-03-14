@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A/B Testing</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-headers">
+            <h1 class="title">A/B Testing</h1>
+            <h2>Analyzing the Impacts of Different Design Choices on User Interaction
+            </h2>
+        </div>
+        <div class="responsive-pic">
+            <img src="assets/abtestingpic.png" alt="Picture of A/B testing cartoon">
+        </div>
+        <hr class="horizontal-line">
+        <h1>Assignment Overview</h1>
+        <p>In this assignment, the goal was to learn about and gain familiarity with different statistical tests used in design analysis in order to understand how design decisions are informed and validated. In order to do this, I had to correctly identify
+            the appropriate statistical test to use in different cases and interpret the results to form conclusions about the effects of the designs.
+        </p>
+        <hr class="horizontal-line">
+        <h1>Part 1: Data Collection</h1>
+        <p>For this first part, I was given the code for a simple webpage and a target interaction on this page. The website was called MedX and our task was to schedule an appointment at a certain medical center with a specific doctor on a given date. Performing
+            this action on the studio TA's computer was fairly straightforward, but there were some interactions that I thought could be improved. Afterwards, I updated the local copy with a few small UI changes. In total, these included:
+            <ul>
+                <li>Making the "Schedule Appointment" and "See Appointment" button background color darker to improve contrast with the text
+                </li>
+                <li>Adding more spacing between each appointment slot so that the user can more clearly distinguish between each appointment
+                </li>
+                <li>Organizing each appointment in chronological order</li>
+                <li>Putting the name of the doctor above the type of visit and the location of the visit</li>
+            </ul>
+            <p>Here is a screenshot of the website after I implemented the changes compared to the original website:</p>
+        </p>
+        <div class="website-container">
+            <div>
+                <h3>Original Website</h3>
+                <img src="assets/original-template.png" alt="screenshot of original website">
+            </div>
+            <div>
+                <h3>Modified Website</h3>
+                <img src="assets/modified-template.png" alt="screenshot of modified website">
+            </div>
+        </div>
+
+        <hr class="horizontal-line">
+        <h1>Part 2: Analysis</h1>
+        <p>After collecting my own data and participating in testing my classmates' designs, I took some time to reflect on the task and created null and alternative hypotheses for each of the following 3 data types: <b>misclick
+                    rate</b> (the frequency with which users click something else on the page before finding the correct button for the task), <b>time on
+                    page</b> (time spent on the webpage for each user group), and <b>time to first click </b>(the time in milliseconds it took for the user to execute his/her first click). <br><br> I chose the time to first click as my third metric because
+            I believe that measuring how fast it takes for the user to first start with the task can reveal information about how engaged they are with the website and how easy it is to use. The initial interaction also sets an important impression for
+            the user about the website and can help explain other metrics that are collected later on.</p>
+        <br>
+        <h2>Creating Null and Alternative Hypotheses for each Metric:</h2>
+        <p>Afterwards, I came up with a set of null and alternative hypotheses for each metric shown below:</p>
+
+        <h3><u>Misclick Rate:</u></h3>
+        <p><b>Null Hypothesis:</b> Making the "Schedule Appointment" and "See Appointment" button background colors darker, adding more spacing between each appointment slot, organizing the appointments in chronological order, and putting the name of the
+            doctor above the type of visit and the location of the visit collectively had no effect on the misclick rate. In other words, there is no difference in the distribution of the data for the metric between the 2 websites.
+        </p>
+        <p><b>Alternative Hypothesis: </b>Making the "Schedule Appointment" and "See Appointment" button background colors darker, adding more spacing between each appointment slot, organizing the appointments in chronological order, and putting the name
+            of the doctor above the type of visit and the location of the visit collectively <b>will decrease </b>the average misclick rate.
+        </p>
+
+        <h3><u>Time Spent on Page:</u></h3>
+        <p><b>Null Hypothesis:</b> Making the "Schedule Appointment" and "See Appointment" button background colors darker, adding more spacing between each appointment slot, organizing the appointments in chronological order, and putting the name of the
+            doctor above the type of visit and the location of the visit collectively had no effect on the time spent on the page.</p>
+        <p><b>Alternative Hypothesis:</b> Making the "Schedule Appointment" and "See Appointment" button background colors darker, adding more spacing between each appointment slot, organizing the appointments in chronological order, and putting the name
+            of the doctor above the type of visit and the location of the visit collectively <b>will decrease </b>the average time spent on the page.</p>
+
+        <h3><u>Time to First Click:</u></h3>
+        <p><b>Null Hypothesis:</b> Making the "Schedule Appointment" and "See Appointment" button background colors darker, adding more spacing between each appointment slot, organizing the appointments in chronological order, and putting the name of the
+            doctor above the type of visit and the location of the visit collectively had no effect on the time spent until the first click.
+        </p>
+        <p><b>Alternative Hypothesis:</b> Making the "Schedule Appointment" and "See Appointment" button background colors darker, adding more spacing between each appointment slot, organizing the appointments in chronological order, and putting the name
+            of the doctor above the type of visit and the location of the visit collectively <b>will decrease </b>the average time to first click.</p>
+        <br>
+        <h2>Predictions about Rejecting the Null Hypotheses:</h2>
+        <p>For each null hypothesis, I make a prediction about whether to reject it or not:</p>
+        <h3><u>Misclick Rate:</u></h3>
+        <p>I believe that I will end up rejecting the null hypothesis for this metric because on the original website, the amount of misclicks is 6 out of 20, while in the modified website, there were only 3 misclicks out of 20 total users. Thus, the amount
+            of misclicks got reduced in half, which is a large amount.</p>
+        <h3><u>Time Spent on Page:</u></h3>
+        <p>I believe that I will end up rejecting the null hypothesis for this metric because on Version A, the average time spent was 22,324.78 milliseconds while on Version B, it was brought down to 7,714.48 milliseconds, which is a large reduction that
+            could likely be statistically significant.</p>
+        <h3><u>Time Until First Click:</u></h3>
+        <p>I believe that I will end up rejecting the null hypothesis for this metric because on Version A, the average time spent was 12,217.43 milliseconds and on Version B, the average time spent was 4,803 milliseconds, which is a reduction of approximately
+            66%.
+        </p>
+
+        <br>
+        <h2>Reasons Behind the Alternative Hypotheses:</h2>
+        <p>Afterwards, I also enumerate the reason behind my alternative hypotheses.
+        </p>
+        <p>
+            Here, I've attached a list of reasons of why I think there will be differences between the versions that are being compared in this A/B test.
+            <ul>
+                <li> Making the background color of each of the buttons darker should help the user more quickly locate which button is for scheduling the appointment and which button is for viewing the details of the appointment, helping them spend less time
+                    on the page and decreasing the misclick rate and time to first click.</li>
+                <li>Organizing the appointments in chronological order can also help decrease these metrics because it creates more intuitive navigation and efficient scanning of appointments, as the users can more quickly scroll to the open appointments
+                    on a particular day.</li>
+                <li>Adding more spacing between each of the appointment slots can help the user more clearly distinguish which set of buttons is for which appointment and can help them schedule their appointment more quickly.
+                </li>
+                <li>Since we are told to schedule an appointment "with Adam Ng" as our first objective, putting the name of the doctor as the first line of each appointment header can help the user more quickly filter down the appointments that are available
+                    for scheduling. </li>
+            </ul>
+        </p>
+        <br>
+        <h2>Run Statistical Tests on the Data</h2>
+        <p>Next, using the data downloaded from studio, I computed the following 3 metrics for both webpage versions A and B:
+            <ul>
+                <li>Misclick Rate</li>
+                <li>Time on Page</li>
+                <li>Time to First Click</li>
+            </ul>
+            <p>Here is a table that summarizes those results:</p>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Version A</th>
+                    <th>Version B</th>
+                </tr>
+                <tr>
+                    <td>Misclick Rate (%)</td>
+                    <td>30</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Time on Page (in milliseconds)</td>
+                    <td>22,324.78</td>
+                    <td>7,714.48</td>
+                </tr>
+                <tr>
+                    <td>Time to First Click (in milliseconds)</td>
+                    <td>12,217.43</td>
+                    <td>4,803.00</td>
+                </tr>
+            </table>
+            <p>Next, for each of these 3 metrics, I conducted a statistical test do determine whether the difference between versions A and B is statistically significant.</p>
+
+            <h3>Misclick Rate Test:</h3>
+            <p>For this metric, I chose to perform a <b>chi-squared test</b> because we are looking at frequencies for this metric (AKA the frequency of a misclick on each website) and seeing if they differ from each other. Since this type of data can only
+                take on a finite set of values (i.e. you either misclicked or you didn't misclick) and is
+                <b>categorical</b>, a chi-squared test fits well here. <br><br> The results of the test are as follows:
+            </p>
+            <h4>Key Metrics:</h4>
+            <table>
+                <tr>
+                    <th>Version A</th>
+                    <th>Outputs</th>
+                </tr>
+                <tr>
+                    <td>Degrees of Freedom</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Chi-Squared Value</td>
+                    <td>4.10352647535658</td>
+                </tr>
+                <tr>
+                    <td><em>p</em>-value</td>
+                    <td>0.0427938666968134</td>
+                </tr>
+            </table>
+            <h4>Interpretation of Results:</h4>
+            <p>From performing this test, we can see that the difference between versions A and B with respect to the misclick rate is
+                <em>statistically significant</em>. Some important metrics that we can draw from this test include the <b>degrees of freedom,
+                    chi-squared value,</b> and <b><em>p</em>-value</b>.
+
+                <ul>
+                    <li><b>Degrees of Freedom:</b> The df value for this test is 1. This means that we have 1 independent piece of information to estimate the variability in the data. In other words, the number of categories that is free to vary in the data
+                        is 1.
+                        <li><b>Chi-Squared Value:</b> A chi-squared value of 4.10352647535658 indicates the magnitude of the difference between the observed misclick rate and the expected misclick rate under the assumption that there is no real difference
+                            between the two webpages.</li>
+                        <li><b><em>p</em>-value:</b> Lastly, if we assume an alpha value of 0.05, since our <em>p</em>-value is lower than this, we can conclude that the difference between versions A and B with respect to misclick rate is statistically significant.
+                            <b>Thus, we reject our null hypothesis.</b>
+                        </li>
+                </ul>
+            </p>
+
+            <h3>Time on Page Test:</h3>
+            <p>For this metric, I chose to perform a <b>one-tailed <em>t</em>
+                    test</b> because this metric is defined continuously and we are specifically checking to see if the experimental value is
+                <em>smaller</em> than the baseline value, not just different from it. After removing outliers due to things such as page refreshes, debugging, etc., the results of the test are as follows:
+            </p>
+            <h4>Key Metrics:</h4>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Outputs</th>
+                </tr>
+                <tr>
+                    <td>Avg(A)</td>
+                    <td>24398.28571</td>
+                </tr>
+                <tr>
+                    <td>Variance(A)</td>
+                    <td>206,407,623</td>
+                </tr>
+                <tr>
+                    <td>Avg(B)</td>
+                    <td>7,714.47619</td>
+                </tr>
+                <tr>
+                    <td>Variance(B)</td>
+                    <td>7,217,818.962</td>
+                </tr>
+                <tr>
+                    <td>Degrees of Freedom</td>
+                    <td>21.39704214</td>
+                </tr>
+                <tr>
+                    <td><em>t</em>-score</td>
+                    <td>5.230923674</td>
+                </tr>
+                <tr>
+                    <td><em>p</em>-value</td>
+                    <td>0.00001643</td>
+                </tr>
+            </table>
+            <h4>Interpretation of Results:</h4>
+            <ul>
+                <li><b>Avg(A):</b> This value says that the average time spend on the page for Version A is 24.4 seconds.
+                    <li><b>Variance(A):</b> This value says that the average spread around the mean is 206,407,623 milliseconds squared. If we take the square root of this value (AKA the standard deviation), we can see that on average, the time spent by users
+                        on this page varies from the mean by approximately 14,366 milliseconds.
+                    </li>
+                    <li><b>Avg(B):</b> This value says that the average time spend on the page for Version B is 7,714.58 seconds. This is significantly lower than that of Version A.
+                        <li><b>Variance(B):</b> This value says that the average spread around the mean is 7,217,818.962 milliseconds squared. If we take the square root of this value (AKA the standard deviation), we can see that on average, the time spent
+                            by users on this page varies from the mean by approximately 2,686.6 milliseconds. This is significantly less than the variance on Version A.</li>
+                        <li><b>Degrees of Freedom:</b> The df value for this test is 21.39. Because there were 21 users in each sample, there are 21 independent variables that can be estimated. Since there are 2 samples, we scale this by the weighted average
+                            of the variances to get an effective approximation of the true degrees of freedom, which refers to the maximum number of independent values in the data sample.</li>
+                        <li><b><em>t</em>-Value:</b> A <em>t</em>-value of 5.23 means that the difference between the means of the two versions is 5.23 times the standard error of the difference between the means. In other words, there is a big difference
+                            between the time spent on the 2 pages.</li>
+                        <li><b><em>p</em>-value:</b> Lastly, if we assume an alpha value of 0.05, since our <em>p</em>-value is much lower than this, we can conclude that our results are statistically significant. </li>
+            </ul>
+
+            <p>From performing this test, we can see that the difference between versions A and B with respect to the time on the page metric is
+                <em>statistically significant</em>. Thus, we reject our null hypothesis.
+            </p>
+
+            <h3>Time to First Click Test:</h3>
+            <p>Lastly, for the time-to-first-click metric, I also chose to perform a <b>one-tailed <em>t</em> test</b> because time is a value that is measured across a continuous spectrum and we are also checking to see if the time to first click for the
+                experimental website is lower than that for the baseline website, not just different from it. After removing outliers, here are the results of that test:</p>
+            <h4>Key Metrics:</h4>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Outputs</th>
+                </tr>
+                <tr>
+                    <td>Avg(A)</td>
+                    <td>12684.05</td>
+                </tr>
+                <tr>
+                    <td>Variance(A)</td>
+                    <td>45,353,784.68</td>
+                </tr>
+                <tr>
+                    <td>Avg(B)</td>
+                    <td>4,803</td>
+                </tr>
+                <tr>
+                    <td>Variance(B)</td>
+                    <td>3,231,792.105</td>
+                </tr>
+                <tr>
+                    <td>Degrees of Freedom</td>
+                    <td>21.69410103</td>
+                </tr>
+                <tr>
+                    <td><em>t</em>-score</td>
+                    <td>5.056446299</td>
+                </tr>
+                <tr>
+                    <td><em>p</em>-value</td>
+                    <td>0.0000239096</td>
+                </tr>
+            </table>
+            <h4>Interpretation of Results:</h4>
+            <ul>
+                <li><b>Avg(A):</b> This value says that the average time until the first click for Version A is 12.684 seconds.
+                    <li><b>Variance(A):</b> This value says that the average spread around the mean is 45,353,784.68 milliseconds squared. If we take the square root of this value (AKA the standard deviation), we can see that on average, the time until the
+                        first click for users varies from the mean by approximately 6,734.52 milliseconds. </li>
+                    <li><b>Avg(B):</b> This value says that the average time until the first click for Version B is 7,714.58 seconds. This is significantly lower than that of Version A.
+                        <li><b>Variance(B):</b> This value says that the average spread around the mean is 3,231,792.105 milliseconds squared. If we take the square root of this value (AKA the standard deviation), we can see that on average, the time until
+                            the first click on this page varies from the mean by approximately 1,797.718 milliseconds. This is significantly less than the variance on Version A.</li>
+                        <li><b>Degrees of Freedom:</b> The df value for this test is 21.69. Because there were 21 users in each sample, there are 21 independent variables that can be estimated. Since there are 2 samples, we scale this by the weighted average
+                            of the variances to get an effective approximation of the true degrees of freedom, which refers to the maximum number of independent values in the data sample.</li>
+                        <li><b><em>t</em>-Value: </b> A <em>t</em>-value of 5.05 means that the difference between the means of the two versions is 5.23 times the standard error of the difference between the means. In other words, there is a big difference
+                            between the time spent until the first click on both pages.
+                        </li>
+                        <li><b><em>p</em>-value:</b> Lastly, if we assume an alpha value of 0.05, since our <em>p</em>-value is much lower than this, we can conclude that our results are statistically significant. Thus, we reject our null hypothesis. </li>
+            </ul>
+            <p>From performing this test, we can see that the difference between versions A and B with respect to the time to first click metric is <em>statistically significant</em>. Thus, we reject our null hypothesis.
+            </p>
+        </p>
+        <hr class="horizontal-line">
+        <h1>Summary Statistics:</h1>
+        <p>In total for the A/B test, there were 21 users who performed the task and 2 outliers that were removed from the Version A data since they had unusually low times (which could have resulted from a technical difficulty). The misclick rate for Version
+            A was 30% and for Version B it was 15%, which indicates that the modified website decreased the amount of misclicks by 50%. For the time spent on the page in Version A, the data varies a lot and there are 2 outliers with abnormally low times.
+            For time spent on the page on Version B, the times were distributed relatively closely around the average of 7,714 milliseconds with 2 users exceeding 10,000 milliseconds. The data also varied a lot for the time to first click metric in Version
+            A and was more uniform for Version B.
+            <br><br> In terms of the actual results themselves, for all 3 statistics, there was a statistically significant difference from Version A to Version B which meant that the changes that were made in Version B led to an enhanced user experience
+            (as time spent on page, time until first click, and misclick rate all dropped).
+        </p>
+    </div>
+</body>
+
+</html>
